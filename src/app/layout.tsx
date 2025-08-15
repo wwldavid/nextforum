@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          {children}
+          <div className="max-w-[1024px] px-6 mt-5 mx-auto">{children}</div>
         </Providers>
       </body>
     </html>

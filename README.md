@@ -7,3 +7,4 @@
 7. npx prisma init --datasource-provider sqlite
 8. npx prisma db push
 9. npx prisma generate
+10. npm i zod@^3.23.8
