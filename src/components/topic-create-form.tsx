@@ -24,7 +24,7 @@ export default function TopicCreateForm() {
   return (
     <Popover placement="left">
       <PopoverTrigger>
-        <Button color="primary" variant="bordered">
+        <Button color="primary" variant="bordered" className="block ml-auto">
           Create a Topic
         </Button>
       </PopoverTrigger>

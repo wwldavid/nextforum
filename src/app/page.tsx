@@ -1,4 +1,5 @@
 import TopicCreateForm from "@/components/topic-create-form";
+import TopicList from "@/components/topic-list";
 
 import React from "react";
 
@@ -10,6 +11,7 @@ export default function Page() {
       </div>
       <div>
         <TopicCreateForm />
+        <TopicList />
       </div>
     </div>
   );
