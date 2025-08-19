@@ -1,11 +1,13 @@
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")  // 运行时用池子
+  directUrl = env("DIRECT_URL")    // 迁移走直连
 }
- 
+
 generator client {
   provider = "prisma-client-js"
 }
+
  
 model User {
   id            String          @id @default(cuid())
