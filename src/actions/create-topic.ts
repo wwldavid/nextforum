@@ -1,7 +1,7 @@
 "use server";
 import { auth } from "@/auth";
 import { prisma } from "@/prisma";
-import { sleep } from "@/utils";
+
 import type { Topic } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { z } from "zod";
@@ -18,7 +18,7 @@ const createTopicSchema = z.object({
   name: z
     .string()
     .min(3)
-    .regex(/^[a-zA-Z0-9_ ]+$/, {
+    .regex(/^[-a-zA-Z0-9_ ]+$/, {
       message:
         "Name must be at least 3 characters long and contain only letters, numbers, underscores, and spaces",
     }),
@@ -29,7 +29,6 @@ export async function createTopic(
   prevState: CreateTopicFormState,
   formData: FormData
 ): Promise<CreateTopicFormState> {
-  await sleep(3000);
   const name = formData.get("name");
   const description = formData.get("description");
   const result = createTopicSchema.safeParse({

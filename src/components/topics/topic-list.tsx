@@ -1,4 +1,4 @@
-import { fetchTopics } from "@/prisma/queries/topic";
+import { fetchTopics } from "@/prisma/queries/topics";
 import { Badge, Chip } from "@heroui/react";
 import Link from "next/link";
 import React from "react";
