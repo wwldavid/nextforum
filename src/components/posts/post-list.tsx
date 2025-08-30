@@ -1,9 +1,11 @@
 "use client";
 import { PostWithData } from "@/prisma/queries/posts";
 import { Avatar, Listbox, ListboxItem } from "@heroui/react";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function PostList({ posts }: { posts: PostWithData[] }) {
+  const router = useRouter();
   return (
     <Listbox
       aria-label="Post List"
@@ -33,6 +35,9 @@ export default function PostList({ posts }: { posts: PostWithData[] }) {
                 {post._count.comments} comments
               </span>
             }
+            onPress={() => {
+              router.push(`/topics/${topicName}/posts/${post.id}`);
+            }}
           >
             {post.title}
           </ListboxItem>
